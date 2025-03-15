@@ -1,22 +1,19 @@
 {
-  "name": "wing-suit-racing-game",
+  "name": "slidable",
+  "private": true,
   "version": "0.1.0",
-  "description": "Un juego de carreras 3D con trajes de alas implementado con ThreeJS y Socket.IO",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "start": "serve .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "serve": "^14.0.1"
+    "three": "^0.162.0"
   },
   "devDependencies": {
-    "jest": "^29.0.0",
-    "mocha": "^10.0.0"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "author": "",
-  "license": "MIT"
+    "@types/three": "^0.162.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
+  }
 } 
