@@ -1,7 +1,9 @@
 import * as THREE from 'three'
+import { WingSuit } from './wingsuit'
 
 // Configuración de la escena
 const scene = new THREE.Scene()
+scene.background = new THREE.Color(0x87CEEB) // Color de cielo
 
 // Configuración de la cámara
 const camera = new THREE.PerspectiveCamera(
@@ -10,7 +12,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 )
-camera.position.set(0, 5, 10)
+camera.position.set(0, 15, 20)
 camera.lookAt(0, 0, 0)
 
 // Configuración del renderer
@@ -26,6 +28,8 @@ scene.add(ambientLight)
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
 directionalLight.position.set(5, 5, 5)
 directionalLight.castShadow = true
+directionalLight.shadow.mapSize.width = 2048
+directionalLight.shadow.mapSize.height = 2048
 scene.add(directionalLight)
 
 // Terreno básico
@@ -40,9 +44,27 @@ terrain.rotation.x = -Math.PI / 2
 terrain.receiveShadow = true
 scene.add(terrain)
 
+// Crear el traje de alas
+const wingsuit = new WingSuit({
+  position: new THREE.Vector3(0, 10, 0),
+  rotation: new THREE.Euler(-Math.PI / 6, 0, 0), // Inclinación inicial
+  color: 0xff0000
+})
+scene.add(wingsuit.mesh)
+
 // Función de animación
 function animate() {
   requestAnimationFrame(animate)
+  
+  // Actualizar la posición de la cámara para seguir al wingsuit
+  camera.position.copy(wingsuit.mesh.position)
+  camera.position.y += 5 // Altura sobre el wingsuit
+  camera.position.z += 15 // Distancia detrás del wingsuit
+  camera.lookAt(wingsuit.mesh.position)
+  
+  // Actualizar el wingsuit
+  wingsuit.update()
+  
   renderer.render(scene, camera)
 }
 
@@ -62,5 +84,6 @@ export {
   scene,
   camera,
   renderer,
-  animate
+  animate,
+  wingsuit
 } 
