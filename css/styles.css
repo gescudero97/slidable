@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+#scene-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #87CEEB; /* Color de cielo */
+}
+
+#info-container {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#fps-counter {
+    margin-bottom: 5px;
+}
+
+#loading-indicator {
+    font-weight: bold;
+}
+
+/* Ocultar loading-indicator cuando está completado */
+.loaded #loading-indicator {
+    display: none;
+} 

@@ -1,0 +1,22 @@
+{
+  "name": "wing-suit-racing-game",
+  "version": "0.1.0",
+  "description": "Un juego de carreras 3D con trajes de alas implementado con ThreeJS y Socket.IO",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "serve": "^14.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "mocha": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+} 
