@@ -63,3 +63,42 @@
 - El modelo placeholder funciona bien para pruebas
 - La cámara sigue suavemente al modelo
 - Las sombras se renderizan correctamente
+
+## Paso 3: Implementación de Controles de Dirección
+**Fecha: [Fecha actual]**
+
+### Completado:
+- ✅ Implementación de controles de teclado
+- ✅ Sistema de física básica
+- ✅ Control de rotación (izquierda/derecha)
+- ✅ Control de inclinación (arriba/abajo)
+- ✅ Límites de rotación implementados
+- ✅ Detección de colisión con el suelo
+- ✅ Sistema de velocidad variable
+
+### Detalles Técnicos:
+- Controles:
+  - Flecha Izquierda/Derecha: Girar
+  - Flecha Arriba/Abajo: Inclinar
+- Física:
+  - Velocidad inicial: 5 unidades/s hacia adelante
+  - Velocidad máxima: 20 unidades/s
+  - Velocidad mínima: 5 unidades/s
+  - Gravedad: 0.1 unidades/s²
+  - Resistencia del aire: 1% por frame
+  - Velocidad de giro: 0.03 radianes/keypress
+- Límites:
+  - Ángulo de inclinación: 0° a -60°
+  - Altura mínima: 1 unidad
+
+### Próximos Pasos:
+- Implementar la cámara que sigue al jugador (Paso 4)
+- Refinar la física del vuelo
+- Añadir efectos de sonido
+- Implementar sistema de reinicio
+
+### Notas:
+- Los controles responden de manera fluida
+- La física proporciona una sensación realista de vuelo
+- El sistema de colisión con el suelo funciona correctamente
+- La velocidad variable basada en la inclinación funciona según lo esperado
