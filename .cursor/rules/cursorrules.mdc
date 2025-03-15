@@ -1,0 +1,25 @@
+---
+description: Rules for Cursor as a Senior Game Developer (ThreeJS, Node.js, Socket.IO)
+globs: 
+alwaysApply: false
+---
+
+Rules for Cursor as a Senior Game Developer (ThreeJS, Node.js, Socket.IO)
+
+- Prioritize Modularity Over Monolithic Code
+Structure the project using multiple files and modules, each with a single responsibility (e.g., player input handling, game state management, rendering logic). Avoid creating a single, large file that manages everything, as this hinders debugging, maintenance, and scalability. For example, separate ThreeJS scene setup into one module, Socket.IO event handling into another, and game logic into a third.
+
+- Optimize ThreeJS for High Performance
+Leverage efficient data structures like BufferGeometry for meshes to boost rendering performance. Reduce draw calls by batching geometries where feasible, and use InstancedMesh for rendering multiple instances of identical objects efficiently. Regularly profile the rendering pipeline to identify and eliminate bottlenecks.
+
+- Adhere to Node.js Scalability Practices
+Write asynchronous code using promises or async/await to manage multiple client connections without blocking the server. Organize server-side logic into distinct Node.js modules (e.g., one for game state, another for network handling) and implement comprehensive error handling to maintain server stability under load.
+
+-Master Socket.IO for Real-Time Networking
+Handle client connections and disconnections gracefully to preserve game state consistency. Utilize Socket.IO rooms or namespaces to manage separate game instances or lobbies effectively. Optimize network traffic by sending minimal, compressed data payloads and limiting update frequency to reduce latency without sacrificing gameplay quality.
+
+- Enforce Security in Networked Games
+Validate all user input on both client and server sides to prevent injection attacks or malformed data from disrupting the game. Implement rate limiting on actions like movement or chat messages to mitigate abuse. Avoid exposing sensitive game state data (e.g., opponent positions in hidden-information games) over the network unnecessarily.
+
+- Test Thoroughly Across All Layers
+Develop unit tests for core components, such as player movement logic or collision detection, to ensure reliability. Perform integration tests to confirm that ThreeJS rendering, Node.js server logic, and Socket.IO networking function seamlessly together. Conduct stress tests with simulated high player counts to uncover performance limits and optimize accordingly.
